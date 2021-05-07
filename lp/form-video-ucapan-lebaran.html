@@ -51,7 +51,7 @@ src="https://www.facebook.com/tr?id=4037365069688733&ev=PageView&noscript=1"
             <p class="text-center" style="margin-bottom: 0;font-size: 14px;margin-top: 13px;">UNTUK PEMESANAN SILAHKAN ISI FORM DIBAWAH INI</p><h6 style="text-align: left;font-family: Roboto, sans-serif;font-size: 18px;color: rgb(0,0,0);margin-left: -10px; margin-top: 40px; margin-bottom: 20px; border-bottom: 1px solid #CFCFCF; line-height: 0.1em;" ><span style=" background:#fff;
     padding:0 10px;">Data Penerima:</span></h6>
             <form method="post" autocomplete="off" name="google-sheet"><input class="form-control" type="text" style="margin-bottom: 15px;font-size: 14px;margin-top: 28px;" placeholder="Nama Bunda" name="name" minlength="3" required=""><input class="form-control form-control" type="tel" placeholder="No. Whatsapp Anda"
-                    name="phone" required="" minlength="8" style="margin-bottom: 20px;font-size: 14px;" inputmode="numeric"><button class="btn btn-block" id="LeadButton" type="submit" style="background-color: #3cb878;color: rgb(255,255,255);font-size: 20px;padding-top: 4px;padding-bottom: 4px;margin-top: 40px;margin-bottom: 20px;"
+                    name="phone" required="" minlength="8" style="margin-bottom: 20px;font-size: 14px;" inputmode="numeric"><button class="btn btn-block" id="Lead" type="submit" style="background-color: #3cb878;color: rgb(255,255,255);font-size: 20px;padding-top: 4px;padding-bottom: 4px;margin-top: 40px;margin-bottom: 20px;"
                     name="submit" value="submit" onclick="window.location.href=&#39;https://api.whatsapp.com/send/?phone=628980626943&amp;text=Halo,%20saya%20sudah%20melakukan%20pemesanan%20Video%20Ucapan%20Lebaran,%20Mohon%20segera%20diproses%20ya%20%F0%9F%99%8F&#39;;">KLIK DISINI JIKA SUDAH ISI FORM&nbsp;<i class="far fa-arrow-alt-circle-right" style="font-size: 18px;"></i></button><script type="text/javascript">
 
 
@@ -72,9 +72,14 @@ src="https://www.facebook.com/tr?id=4037365069688733&ev=PageView&noscript=1"
   </script>
 
 <script type="text/javascript">
-  $('#$Lead').click(function() {
-    fbq('track', 'Lead');
-  });
+  var button = document.getElementById('Lead');
+  button.addEventListener(
+    'click', 
+    function() { 
+      fbq('track', 'Lead', {});          
+    },
+    false
+  );
 </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
